@@ -52,6 +52,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_INSTALL_PLUGINS=${GRAFANA_PLUGINS}
+      - DS_PROMETHEUS=Prometheus
     restart: unless-stopped
     
   pihole_exporter:
