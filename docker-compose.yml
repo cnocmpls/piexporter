@@ -40,7 +40,7 @@ services:
     
 
   grafana:
-    image: grafana/grafana:6.7.2
+    image: grafana/grafana:latest
     container_name: grafana
     hostname: grafana
     network_mode: host
