@@ -1,8 +1,8 @@
 version: '3.8'
 
 volumes:
-    prometheus_data: {}
-    grafana_data: {}
+    prometheus_data-1: {}
+    grafana_data-1: {}
 
 services:
   prometheus:
@@ -12,7 +12,7 @@ services:
     network_mode: host
     volumes:
       - /opt/piexporter/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
+      - prometheus_data-1:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -45,7 +45,7 @@ services:
     hostname: grafana
     network_mode: host
     volumes:
-      - grafana_data:/var/lib/grafana
+      - grafana_data-1:/var/lib/grafana
       - /opt/piexporter/grafana/provisioning:/etc/grafana/provisioning
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
