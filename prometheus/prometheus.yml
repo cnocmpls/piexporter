@@ -9,6 +9,10 @@ scrape_configs:
     scrape_interval: 60s
     static_configs:
       - targets: ['localhost:9100','pi-hole-ndls-1:9100','pi-hole-ndls-2:9100']
+  - job_name: 'unboundexporter'
+    scrape_interval: 60s
+    static_configs:
+      - targets: ['pi-hole-ndls-1:9167','pi-hole-ndls-2:9167']
 
   - job_name: 'pihole'
     scrape_interval: 60s
